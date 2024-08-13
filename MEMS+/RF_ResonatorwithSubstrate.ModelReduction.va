@@ -1,0 +1,62 @@
+// Verilog-A model automatically generated on: Fri Oct 27 14:05:47 2023 with: MEMS+ 7.000
+//
+// Useful scale factors:
+//
+// V(ActuateElectrode) : 1 V = 1 V
+// V(Resonator) : 1 V = 1 V
+// V(SenseElectrode) : 1 V = 1 V
+// V(NortheastX_x) : 1e+06 V = 1 m
+// I(NortheastX_x) : 0.0001 A = 1 N
+// V(NortheastY_y) : 1e+06 V = 1 m
+// I(NortheastY_y) : 0.0001 A = 1 N
+// V(NorthwestX_y) : 1e+06 V = 1 m
+// I(NorthwestX_y) : 0.0001 A = 1 N
+// V(NorthwestY_x) : 1e+06 V = 1 m
+// I(NorthwestY_x) : 0.0001 A = 1 N
+// V(SoutheastX_x) : 1e+06 V = 1 m
+// I(SoutheastX_x) : 0.0001 A = 1 N
+// V(SoutheastY_y) : 1e+06 V = 1 m
+// I(SoutheastY_y) : 0.0001 A = 1 N
+// V(SouthwestX_x) : 1e+06 V = 1 m
+// I(SouthwestX_x) : 0.0001 A = 1 N
+// V(SouthwestY_y) : 1e+06 V = 1 m
+// I(SouthwestY_y) : 0.0001 A = 1 N
+
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+
+module RFResonatorwithSubstrateModelReduction(SenseElectrode, Resonator, ActuateElectrode, SouthwestY_y, SouthwestX_x, SoutheastY_y, SoutheastX_x, NorthwestY_x, NorthwestX_y, NortheastY_y, NortheastX_x);
+
+inout SenseElectrode, Resonator, ActuateElectrode, SouthwestY_y, SouthwestX_x, SoutheastY_y, SoutheastX_x, NorthwestY_x, NorthwestX_y, NortheastY_y, NortheastX_x;
+
+electrical reduced_0, reduced_1, ActuateElectrode, Resonator, SenseElectrode, Q_ActuateElectrode, Q_Resonator, Q_SenseElectrode, NortheastX_x, NortheastY_y, NorthwestX_y, NorthwestY_x, SoutheastX_x, SoutheastY_y, SouthwestX_x, SouthwestY_y;
+
+analog begin
+
+	I(reduced_0)<+( +5.5560984133894843e-09*V(reduced_0) +1.7107818102673915e-21*V(reduced_1) -2.9814696409794797e-26*V(ActuateElectrode) +1.0101706482843601e-34*V(Resonator) +2.9814696510811673e-26*V(SenseElectrode) -6.4293175814263165e-02*I(NortheastX_x) +6.4293175790529331e-02*I(NortheastY_y) -1.1914064767364800e-01*I(NorthwestX_y) -1.1914064767450357e-01*I(NorthwestY_x) +1.1914064763808281e-01*I(SoutheastX_x) +1.1914064763051255e-01*I(SoutheastY_y) +6.4293175772654462e-02*I(SouthwestX_x) -6.4293175779431555e-02*I(SouthwestY_y) -2.9814700653860850e-15*V(Resonator,ActuateElectrode)*V(Resonator,ActuateElectrode) +2.9814695305479570e-15*V(SenseElectrode,Resonator)*V(SenseElectrode,Resonator) -1.1804798921009071e-13*V(Resonator,ActuateElectrode)*V(Resonator,ActuateElectrode)*V(reduced_0) -1.1804798941843307e-13*V(SenseElectrode,Resonator)*V(SenseElectrode,Resonator)*V(reduced_0))+ ddt(( -1.7123936985508631e-27*V(reduced_0) +6.2535212420843848e-15*V(reduced_1)));
+	I(reduced_1)<+( +1.7107818102673516e-21*V(reduced_0) -9.9999999999999995e-07*V(reduced_1) -6.1153675468089528e-40*V(ActuateElectrode) -3.9784995934989183e-40*V(Resonator) +2.1368679533100300e-40*V(SenseElectrode) -1.3183898417423734e-16*I(NortheastX_x) +1.2490009027033011e-16*I(NortheastY_y) -1.9428902930940239e-16*I(NorthwestX_y) -2.1510571102112410e-16*I(NorthwestY_x) +1.8735013540549517e-16*I(SoutheastX_x) +1.8041124150158796e-16*I(SoutheastY_y) +1.0061396160665482e-16*I(SouthwestX_x) -1.1796119636642288e-16*I(SouthwestY_y) -6.1153675533453162e-29*V(Resonator,ActuateElectrode)*V(Resonator,ActuateElectrode) +2.1368679170221494e-29*V(SenseElectrode,Resonator)*V(SenseElectrode,Resonator) -2.9306833198744143e-43*V(Resonator,ActuateElectrode)*V(Resonator,ActuateElectrode)*V(reduced_1) -3.1648604820766143e-43*V(SenseElectrode,Resonator)*V(SenseElectrode,Resonator)*V(reduced_1))+ ddt(( +1.0000000000000004e-12*V(reduced_0) +1.6413951705525588e-27*V(reduced_1)));
+	I(ActuateElectrode)<+( +3.2000000000000008e-17*V(ActuateElectrode) -3.2000000000000008e-17*V(Resonator))+ ddt(( +9.9999999999999998e-13*V(Q_ActuateElectrode)));
+	I(Resonator)<+( -3.2000000000000008e-17*V(ActuateElectrode) +6.3999999999999992e-17*V(Resonator) -3.2000000000000008e-17*V(SenseElectrode))+ ddt(( +9.9999999999999998e-13*V(Q_Resonator)));
+	I(SenseElectrode)<+( -3.2000000000000008e-17*V(Resonator) +3.2000000000000008e-17*V(SenseElectrode))+ ddt(( +9.9999999999999998e-13*V(Q_SenseElectrode)));
+	I(Q_ActuateElectrode)<+( +3.0140501430132733e-07*V(ActuateElectrode) -3.0140501430132733e-07*V(Resonator) -9.9999999999999995e-07*V(Q_ActuateElectrode)+( +6.8675227717169139e-11*V(reduced_0) +1.1889761664766137e-09*V(reduced_0)*V(reduced_0) +5.2939559203393771e-19*V(reduced_1)*V(reduced_0) )*V(ActuateElectrode)+( -6.8675227717169139e-11*V(reduced_0) -1.1889761664766137e-09*V(reduced_0)*V(reduced_0) -5.2939559203393771e-19*V(reduced_1)*V(reduced_0) )*V(Resonator));
+
+	I(Q_Resonator)<+( -3.0140501430132733e-07*V(ActuateElectrode) +6.0281002860265487e-07*V(Resonator) -3.0140501430132749e-07*V(SenseElectrode) -9.9999999999999995e-07*V(Q_Resonator)+( -6.8675227717169139e-11*V(reduced_0) -1.1889761664766137e-09*V(reduced_0)*V(reduced_0) -5.2939559203393771e-19*V(reduced_1)*V(reduced_0) )*V(ActuateElectrode)+( +2.3779562113053346e-11*V(reduced_0) +2.3779646509298628e-09*V(reduced_0)*V(reduced_0) -1.0587911840678754e-18*V(reduced_1)*V(reduced_0) )*V(Resonator)+( +4.4895665609409748e-11*V(reduced_0) -1.1889884849826447e-09*V(reduced_0)*V(reduced_0) )*V(SenseElectrode));
+
+	I(Q_SenseElectrode)<+( -3.0140501430132749e-07*V(Resonator) +3.0140501430132749e-07*V(SenseElectrode) -9.9999999999999995e-07*V(Q_SenseElectrode)+( +4.4895665609409748e-11*V(reduced_0) -1.1889884849826447e-09*V(reduced_0)*V(reduced_0) )*V(Resonator)+( -4.4895665609409748e-11*V(reduced_0) +1.1889884849826447e-09*V(reduced_0)*V(reduced_0) )*V(SenseElectrode));
+
+
+
+	I(NortheastX_x)<+ 1.0*(V(NortheastX_x)-( +6.4293175814263165e-02*V(reduced_0) +1.3183898417423734e-16*V(reduced_1)));
+	I(NortheastY_y)<+ 1.0*(V(NortheastY_y)-( -6.4293175790529331e-02*V(reduced_0) -1.2490009027033011e-16*V(reduced_1)));
+	I(NorthwestX_y)<+ 1.0*(V(NorthwestX_y)-( +1.1914064767364800e-01*V(reduced_0) +1.9428902930940239e-16*V(reduced_1)));
+	I(NorthwestY_x)<+ 1.0*(V(NorthwestY_x)-( +1.1914064767450355e-01*V(reduced_0) +2.1510571102112408e-16*V(reduced_1)));
+	I(SoutheastX_x)<+ 1.0*(V(SoutheastX_x)-( -1.1914064763808280e-01*V(reduced_0) -1.8735013540549517e-16*V(reduced_1)));
+	I(SoutheastY_y)<+ 1.0*(V(SoutheastY_y)-( -1.1914064763051255e-01*V(reduced_0) -1.8041124150158794e-16*V(reduced_1)));
+	I(SouthwestX_x)<+ 1.0*(V(SouthwestX_x)-( -6.4293175772654462e-02*V(reduced_0) -1.0061396160665481e-16*V(reduced_1)));
+	I(SouthwestY_y)<+ 1.0*(V(SouthwestY_y)-( +6.4293175779431555e-02*V(reduced_0) +1.1796119636642288e-16*V(reduced_1)));
+end
+endmodule
+
+
