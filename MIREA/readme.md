@@ -2,7 +2,8 @@
 # MEMS resonator with Interdigital electrodes
 
 ## CAD model:
-n.a.
+
+![resonator_mirea](https://github.com/Kolchuzhin/Verilog-A_components/blob/main/MIREA/resonator_mirea.png)
 
 ## Verilog-A model:
 
