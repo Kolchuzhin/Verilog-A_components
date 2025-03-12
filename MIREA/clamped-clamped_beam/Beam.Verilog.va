@@ -1,0 +1,30 @@
+// Verilog-A model automatically generated on: Fri Oct 18 18:33:03 2024
+//           with: MEMS+ 6.500, Revision: 24b7fbf29f65 (2020-06-30 16:22:16)
+//
+// Useful scale factors:
+//
+// V(avz) : 0.0001 V = 1 rad/s
+
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+
+module BeamVerilog(avz);
+
+input avz;
+
+electrical reduced_0, reduced_1, reduced_2, avz, avz_dot;
+
+analog begin
+
+	I(reduced_0)<+( -9.9999999937050857e-07*V(reduced_0) +2.5254849030149264e-11*V(reduced_1) -1.6132593550355643e-24*V(reduced_2) -2.2783668126564205e-38*V(avz)*V(avz)-5.7157826104593141e-34)+ ddt(( -2.5144983385369942e-17*V(reduced_0) -9.9999999936774622e-13*V(reduced_1) +1.1865102393048195e-32*V(reduced_2)));
+	I(reduced_1)<+( +2.5035117740524044e-11*V(reduced_0) +4.3946251630127623e-09*V(reduced_1) +7.1289129210172983e-25*V(reduced_2) -1.5783732793797375e-31*V(avz)*V(avz)-3.9596953804702446e-27)+ ddt(( -2.5228102880896230e-17*V(reduced_0) +2.5144983385369957e-17*V(reduced_1) -2.9833956663091335e-37*V(reduced_2)));
+	I(reduced_2)<+( -1.6132605654382076e-24*V(reduced_0) +7.1289129213216476e-25*V(reduced_1) +6.7750480967777711e-05*V(reduced_2) +7.5307664833451739e-27*V(avz_dot) -1.5528452233333325e-11*V(avz)*V(avz)-3.8956526556472178e-07)+ ddt(( -1.7953833519587104e-34*V(reduced_0) -1.6132600596417956e-30*V(reduced_1) +6.5242305967517051e-46*V(reduced_2)));
+	I(avz_dot)<+( -9.9999999999999995e-07*V(avz_dot))+ ddt(( +9.9999999999999978e-13*V(avz)));
+
+
+end
+endmodule
+
+
