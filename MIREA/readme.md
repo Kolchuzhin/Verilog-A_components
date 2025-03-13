@@ -1,17 +1,8 @@
 
-# MEMS resonator with Interdigital electrodes
+## MEMS clamped clamped beam
 
-## CAD model:
+https://github.com/Kolchuzhin/Verilog-A_components/tree/main/MIREA/clamped-clamped_beam
 
-![resonator_mirea](https://github.com/Kolchuzhin/Verilog-A_components/blob/main/MIREA/resonator_mirea.png)
+## MEMS resonator with Interdigital electrodes
 
-## Verilog-A model:
-
-+ inout RU, RD, LU, LD, BEAM, mass_y, mass_x;
-+ output RightUp, RightDown, LeftUp, LeftDown;
-
-[resonator_mirea.va](https://github.com/Kolchuzhin/Verilog-A_components/blob/main/MIREA/resonator_mirea.va)
-
-## Testbench:
-
-![testbench](https://github.com/Kolchuzhin/Verilog-A_components/blob/main/MIREA/schematic.jpeg)
+![mirea_resonator](https://github.com/Kolchuzhin/Verilog-A_components/blob/main/MIREA/mirea_resonator/mirea_resonator.png)
